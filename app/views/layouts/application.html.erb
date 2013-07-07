@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+  		<title>ProjThree</title>
+  		<%= stylesheet_link_tag    "application", :media => "all" %>
+  		<%= stylesheet_link_tag    "bootstrap", :media => "all" %>
+  		<%= stylesheet_link_tag    "bootstrap.min", :media => "all" %>
+  		<%= stylesheet_link_tag    "bootstrap-responsive", :media => "all" %>
+  		<%= stylesheet_link_tag    "bootstrap-responsive.min", :media => "all" %>
+  		<%= stylesheet_link_tag    "jquery-ui", :media => "all" %>
+  		<%= javascript_include_tag "application" %>
+  		<%= javascript_include_tag "bootstrap" %>
+  		<%= javascript_include_tag "bootstrap.min" %>
+  		<%= javascript_include_tag "bootstrap" %>
+  		<%= javascript_include_tag "jquery.min" %>
+  		<%= javascript_include_tag "jquery-1.9.1" %>
+  		<%= javascript_include_tag "jquery-ui" %>
+  		<%= javascript_include_tag "jquery-ujs" %>
+  		<%= javascript_include_tag "prototype" %>
+  		<%= javascript_include_tag "scriptaculous" %>
+  		<%= javascript_include_tag "simple-slide-show" %>
+  		<%= javascript_include_tag "effects" %>
+  		<%= csrf_meta_tags %>
+	</head>
+
+	<body onload="displayTimestamp()">	
+
+		<div id="page">
+
+			<div id="wrapper">
+
+				<div id="header" class="header">
+
+					<p class="text-center headerText ">Events in Andhra	</p>
+
+					<span id="time_stamp" class="timeStamp">
+
+						<p id="time_text" class="text-center"></p>
+
+					</span>
+
+				</div>
+
+				<div id="content_menu" class="contentMenu">
+			
+					<script>	
+					
+						$(function() {
+							$( "#add_event_tab" ).draggable({ containment: "parent" });
+							$( "#view_events_tab" ).draggable({ containment: "parent" });
+							$( "#give_feedback_tab" ).draggable({ containment: "parent" });
+							$( "#view_feedbacks_tab" ).draggable({ containment: "parent" });
+						});
+
+					</script>
+
+					<div id="add_event_tab" class="AddEventTab navbar-inner">
+						<span id="add_event_tab_text" class="newsText h5">
+							<%= link_to "Add Event", "#addEvent", :role => "button", :data => {:toggle => "modal"}  %>
+						</span>
+					</div>
+						
+					<div id="view_events_tab" class="ViewEventsTab navbar-inner">
+						<span id="view_events_tab_text" class="newsText h5">
+							<%= link_to "View Events", "/event/ViewEventsOptions", :remote => true, :id => "vieo" %>
+						</span>
+					</div>
+
+					<div id="view_reported_events_tab" class="ViewReportedEventsTab navbar-inner">
+						<span id="view_reported_events_tab_text" class="newsText h5">
+							<%= link_to "View Reported Events", "/events/ViewReportedEvents", :remote => true, :id => "spor" %>
+						</span>
+					</div>	
+
+					<div id="give_feedback_tab" class="GiveFeedbackTab navbar-inner">
+						<span id="give_feedback_tab_text" class="newsText h5">
+							<%= link_to "Add Event", "#giveFeedback", :role => "button", :data => {:toggle => "modal"}  %>
+						</span>
+					</div>
+
+					<div id="view_feedbacks_tab" class="ViewFeedbacksTab navbar-inner">
+						<span id="view_feedbacks_tab_text" class="newsText h5">
+							<%= link_to "View Feedbacks", "/feedbacks/viewfeedbacks", :remote => true, :id => "spor" %>
+						</span>
+					</div>	
+						
+							
+				</div>
+
+				<div id="image_job" class="imageJob">
+
+					<div id="image_slider" class="imageSlider">
+			
+						<ul id="slide-images">
+	
+							<li><%= image_tag "one.jpeg", :alt => "One", :title => "One" %></li>
+							<li><%= image_tag "two.jpeg", :alt => "Two", :title => "Two" %></li>
+							<li><%= image_tag "three.jpeg", :alt => "Three", :title => "Three" %></li>
+							<li><%= image_tag "four.jpeg", :alt => "Four", :title => "Four" %></li>
+							<li><%= image_tag "five.jpeg", :alt => "Four", :title => "Four" %></li>
+							<li><%= image_tag "six.jpeg", :alt => "Six", :title => "Six" %></li>
+							<li><%= image_tag "seven.jpeg", :alt => "Seven", :title => "Seven" %></li>
+							<li><%= image_tag "eight.jpeg", :alt => "Eight", :title => "Eight" %></li>
+							<li><%= image_tag "nine.jpeg", :alt => "Nine", :title => "Nine" %></li>
+							<li><%= image_tag "ten.jpeg", :alt => "Ten", :title => "Ten" %></li>
+	
+						</ul>
+
+					</div>		
+
+					<div id="job_add" class="jobAdd">
+			
+						<h4>Want to advertize your business</h4>
+
+						<br>
+
+						<h5>We are soon going commercial</h5>	
+
+						<br>
+
+						<h5>Drop your phone number to us.</h5>
+
+						<br>
+
+						<h5>Mail us at marketing@xploreall.com</h5>
+
+					</div>		
+
+				</div>
+
+
+				<div id="content_layout" class="contentLayout">
+			
+					<%= yield %>
+			
+				</div>
+
+				<div id="addEvent" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+
+					<div class="modal-header">
+    					
+    					<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+    					<h3 id="myModalLabel">Add Event</h3>
+  		
+  					</div>
+ 
+					<div class="modal-body">
+    	
+						<%= form_for :event, :html => { :onsubmit => 'return validateFeedback();' }, :url => { :controller => 'event', :action => 'AddEvent', :method => 'post' } do |f| %>
+	
+							<%= f.label :title %>
+							<%= f.text_field :title, :id => 'title', :size => 20, :class => 'textarea' %><br />
+							<%= f.label :description %>
+							<%= f.text_area :description, :id => 'description', :rows => 5, :cols => 5, :class => 'textarea' %><br />
+							<%= f.label :district %><br>
+    						<%= f.select :district, [['Adilabad','adilabad'],['Nizamabad','nizamabad'],['Medak','medak'],['Ranga Reddy','rangareddy'],['Hyderabad','hyderabad'],['Warangal','warangal'],['Karimnagar','karimnagar'],['Nalgonda','nalgonda'],['Khammam','khammam'],['Mahaboob Nagar','mahabbobnagar'],['Srikakulam','srikakulam'],['Vijayanagaram','vijayanagaram'],['Vishakapatnam','vishakapatnam'],['East Godavari','eastgodavari'],['West Godavari','westgodavari'],['Krishna','krishna'],['Guntur','guntur'],['Prakasham','prakasham'],['Nellore','nellore'],['Chittoor','chittoor'],['Kadapa','kadapa'],['Anantapur','anantapur'],['Kurnool','kurnool']] %>
+							<%= f.label :place %>
+							<%= f.text_field :place, :id => 'place', :size => 25, :class => 'textarea' %><br />
+							<%= f.label :venue %>
+							<%= f.text_field :venue, :id => 'venue', :size => 25, :class => 'textarea' %><br />
+							<%= f.label :contactperson %>
+							<%= f.text_field :contactperson, :id => 'contactperson', :size => 25, :class => 'textarea' %><br />
+							<%= f.label :contactnumber %>
+							<%= f.text_field :contactnumber, :id => 'contactnumber', :size => 25, :class => 'textarea' %><br />
+		
+					</div>
+  
+  					<div class="modal-footer">
+	
+							<%= submit_tag "Add Event ", :class => 'button' %>
+
+						<% end %>
+
+					</div>	
+
+		
+							
+  				</div>
+
+			</div>
+
+
+
+
+
+
+
+			</div>
+
+
+		</div>
+		
+
+	</body>
+
+</html>
+
+<!--  Start of Code for jquery ajax effects before send -->
+
+<script>
+
+	jQuery(document).bind("ajax:beforeSend", function() {
+		jQuery('#wrapper').fadeTo('slow',0.4);
+		jQuery('#spinner_page').show();
+	
+	});
+
+</script>
+
+
+
+<!--  End of Code for jquery ajax effects before send -->
+
+<div id="spinner_page" style="display:none;margin-left:365px;margin-top:-248px;position:absolute;">
+    <%=image_tag "ajax-loader.gif" %>
+</div>

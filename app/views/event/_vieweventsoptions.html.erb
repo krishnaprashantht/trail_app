@@ -1,0 +1,12 @@
+<h4 class="text-center">Please give your choice</h4>
+<br><br><br><br>
+<%= form_for :event_view, :html => { :onsubmit => 'return validateFeedback();' }, :url => { :controller => 'event', :action => 'ViewEvents', :method => 'post' } do |f| %>
+	
+	<%= f.label :district %><br>
+    <%= f.select :district, [['Adilabad','adilabad'],['Nizamabad','nizamabad'],['Medak','medak'],['Ranga Reddy','rangareddy'],['Hyderabad','hyderabad'],['Warangal','warangal'],['Karimnagar','karimnagar'],['Nalgonda','nalgonda'],['Khammam','khammam'],['Mahaboob Nagar','mahabbobnagar'],['Srikakulam','srikakulam'],['Vijayanagaram','vijayanagaram'],['Vishakapatnam','vishakapatnam'],['East Godavari','eastgodavari'],['West Godavari','westgodavari'],['Krishna','krishna'],['Guntur','guntur'],['Prakasham','prakasham'],['Nellore','nellore'],['Chittoor','chittoor'],['Kadapa','kadapa'],['Anantapur','anantapur'],['Kurnool','kurnool']] %>
+	
+	<br><br>
+
+	<%= submit_tag "View Events ", :class => 'button' %>
+
+<% end %>

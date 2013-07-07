@@ -1,0 +1,407 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or vendor/assets/stylesheets of plugins, if any, can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the top of the
+ * compiled file, but it's generally better to create a new file per style scope.
+ *
+ *= require_self
+ *= require_tree .
+ */
+ 
+.Layout{
+	background-color: #F5FFFA;	
+}
+
+#page {
+	position: relative;
+	/*max-width: 1050px;*/
+	margin: 0 auto;	
+	background-color: #FFF; 
+}
+
+#wrapper {
+	position: relative;
+	max-width: 1050px;
+	margin: 0 auto;	
+	background-color: #FFF; 
+}
+
+.header{
+	position:relative;
+	height:100px;
+	padding:0px;	
+	margin:0 auto;
+	/*background-image: url("background.png");*/
+	z-index:0;
+	background-color: black;
+}
+
+
+
+.headerText{
+	padding-top:30px;
+	float: center;
+	font-size: 40px;
+	color: white;
+}
+ 
+ .textAlignCenter{
+    text-align: center;
+}
+
+.mainLayout{
+	height: 60%;
+	/*	border: 2px solid; */
+}
+
+.contentLayout{
+	top: 10px;
+	height: 530px;
+	width: 100%;
+	/*padding-left: 20px;*/
+	float: left;	
+	padding-bottom: 0.4%;
+}
+
+.contentMenu{
+	height: 40px;
+	/* border: 1px solid; */
+	
+}
+
+.settingItem{
+	height: 30px;
+}
+
+.settings, .feedback{
+	height: 490px;
+	border: 1px solid;
+	padding-top: 10px;
+	float: left;
+	padding-left: 1px;
+	padding-right: 1px;
+}
+
+.footerLayout{
+	height: 5px;
+}
+
+.feedbackSpacing{
+	border-spacing: 25px;
+	background-position: 50% 50%;
+}
+
+.feedbackForm{
+	padding-left: 50px;
+}
+
+.userSpacing{
+	padding-top: 20px;
+	padding-left: 100px;
+	border-spacing: 50px;
+	background-position: 50% 50%;	
+}
+
+
+.emailHeading, .roleHeading{
+	padding-top: 10px;
+	font-size: 25px;
+	font-weight: bolder;
+	padding-bottom: 10px;
+}
+
+.email, .role{
+	font-size: 20px;
+	padding-left: 5px;
+	padding-right: 20px;
+	
+}
+
+.newsFeed{
+	height: 450px;
+	width: 1050px;
+}
+
+/*.businessNews{
+	position: relative; 
+	width: 110px; 
+	left: 0px; 
+	top: 0px;
+	div.newsText {background:blue;}
+}
+
+.sportsNews{
+	position: relative; 
+	width: 110px; 
+	left: 152px; 
+	top: -42px;
+}
+
+.latestNews{
+	position: relative; 
+	width: 110px; 
+	left: 304px; 
+	top: -84px;
+}
+
+.popularNews{
+	position: relative; 
+	width: 110px; 
+	left: 456px; 
+	top: -126px;
+}
+
+.submitFeedback{
+	position: relative; 
+	width: 110px; 
+	left: 608px; 
+	top: -168px;
+}
+
+.viewFeedback{
+	position: relative; 
+	width: 110px; 
+	left: 760px; 
+	top: -210px;
+}
+
+.moderateUsers{
+	position: relative; 
+	width: 110px; 
+	left: 912px; 
+	top: -252px;	
+}
+
+.tabSettings{
+	position: relative; 
+	width: 100px; 
+	left: 1064px; 
+	top: -294px;
+}
+
+.logout{
+	position: relative;
+	width: 100px;
+	left: 1206px;
+	top: -336px;
+}
+
+.newsText{
+	float: left;
+	padding-top: 8px;
+}*/
+
+.addUserLink{
+	float:left;
+	margin-left: 150px;
+	margin-right: 100px;
+}
+
+.viewUsersLink{
+	float:left;
+	margin-left: 500px;
+	margin-right: 20px;
+}
+
+.arrowImage{
+	float: right;
+	padding-top: 10px;
+}
+
+.feedbackHeading, .eventHeading{
+	/*padding-top: 0.1%;*/
+	/*padding-left: 0.1%;*/
+	height: 0%;
+}
+
+.feedbackDisplay{
+	
+	
+}
+
+.feedbackContainer, .eventContainer{
+	padding-top: 1%;
+	height: 90px;
+}
+
+.userDetails, .eventDetails{
+	height: 20%;
+	background-color: #f0f8ff;
+}
+
+.feedbackName, .eventName{
+	float: left;
+}
+
+.feedbackEmail, .eventVenue{
+	float: right;
+}
+
+.feedbackContent, .eventDescription{
+	height: 80%;	
+	padding-top: 6px;
+	background-color: #faebd7;
+}
+
+.pageList{
+	padding-top: 0.1%;
+	height: 8%;
+	background-color: #ffffff;
+}
+
+.paginateList{
+	margin-left: 82%;
+}
+
+.settingCheck{
+	padding-top: 1px;
+/*	white-space: nowrap;
+	display:inline;   */
+	background-color: #f0f8ff;
+}
+
+.settingText{
+	/*min-height: 10px !important;*/
+	/*max-height: 11px !important;*/
+	float:right;
+	padding-bottom:5% !important;
+}
+
+#content {
+    padding: 10px;
+    margin-left: -2px;
+    overflow: hidden;
+}
+
+/* For Pagination */
+
+ul{border:0; margin:0; padding:0;}
+
+#pagination-flickr li{
+border:0; margin:0; padding:0;
+font-size:11px;
+list-style:none;
+}
+#pagination-flickr a{
+border:solid 1px #DDDDDD;
+margin-right:2px;
+}
+#pagination-flickr .previous-off,
+#pagination-flickr .next-off {
+color:#666666;
+display:block;
+float:left;
+font-weight:bold;
+padding:3px 4px;
+}
+#pagination-flickr .next a,
+#pagination-flickr .previous a {
+font-weight:bold;
+border:solid 1px #FFFFFF;
+} 
+#pagination-flickr .active{
+color:#ff0084;
+font-weight:bold;
+display:block;
+float:left;
+padding:4px 6px;
+}
+#pagination-flickr a:link,
+#pagination-flickr a:visited {
+color:#0063e3;
+display:block;
+float:left;
+padding:3px 6px;
+text-decoration:none;
+}
+#pagination-flickr a:hover{
+border:solid 1px #666666;
+}
+
+
+.timeStamp{
+	color: white;
+}
+
+.hitCounter{
+	padding-top:100px;
+	height:300px;
+}
+
+.hitNumber{
+	background-color: grey;
+	color: #CC0033;
+}
+ 
+
+  
+
+  
+ .AddEventTab, .ViewEventsTab, .GiveFeedbackTab, .ViewFeedbacksTab, .ViewReportedEventsTab{
+  padding-top: 12px;
+  position: relative;
+  height: 40px;
+  width: 108px;       /* Shold be 74.6 pixel if 9 tabs are there */
+  text-align: center;
+  float: left;
+  margin: 0 0 0 0;
+  }
+
+
+
+
+/* For image sliding */
+
+#slide-images{
+	position:relative;
+	float:left;
+	display:block;
+	margin:0px;
+	padding:0px;
+	width:650px;
+	height:300px;
+	overflow:hidden;
+}
+
+#slide-images li{
+	position:absolute;
+	display:block;
+	list-style-type:none;
+	margin:0px;
+	padding:0px;
+	background-color:#FFFFFF;
+}
+
+#slide-images li img{
+	min-width:100%;
+	display:block;
+	background-color:#FFFFFF;
+}
+
+.imageJob{
+	padding-top:50px;
+	height: 320px;
+}
+
+.imageSlider{
+	float:left;
+	padding-right:40px;
+	
+}
+
+.jobAdd{
+	float:left;
+	padding-left:10px;
+	height: 300px;
+	border: 1px solid;
+}
+
+.addUserForm{
+	border-spacing: 25px;
+	background-position: 50% 50%;
+}
+

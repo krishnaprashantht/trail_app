@@ -1,0 +1,48 @@
+<div id="event_heading" class="eventHeading">
+
+	<h3 class="textAlignCenter">Events</h3>
+
+</div>
+
+<div id="page_list" class="pageList">
+
+	<div id="paginate_list" class="paginateList">
+
+		<ul id="pagination-flickr">
+			<li><a href="?page=1">1</a></li>
+			<li><a href="?page=2">2</a></li>
+			<li><a href="?page=3">3</a></li>
+			<li><a href="?page=4">4</a></li>
+			<li><a href="?page=5">5</a></li>
+			<li><a href="?page=6">6</a></li>
+		</ul>	
+
+	</div>
+
+</div>
+
+<br>
+
+<% @events.each do |e| %>
+
+	<div id="event_container" class="eventContainer">
+
+		<div id="event_details" class="eventDetails">
+
+			<div id="event_name" class="eventName">
+				<%= e.title %>
+			</div>
+
+			<div id="event_venue" class="eventVenue">
+				<%= e.venue %>, <%= e.place %>, <%= e.district %> 
+			</div>
+
+		</div>
+
+		<div id="event_description" class="eventDescription">
+			<%= e.description %>
+		</div>	
+
+	</div> 
+  
+<% end %>
