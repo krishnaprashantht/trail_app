@@ -207,9 +207,11 @@
 	margin-right: 20px;
 }
 
-.arrowImage{
+.arrowImage, .reportAbuseTag{
 	float: right;
-	padding-top: 10px;
+	padding-top: 5px;
+	padding-right:10px;
+	padding-bottom:20px;
 }
 
 .feedbackHeading, .eventHeading{
@@ -241,7 +243,7 @@
 	float: right;
 }
 
-.feedbackContent, .eventDescription{
+.feedbackContent, .descriptionContainer{
 	height: 80%;	
 	padding-top: 6px;
 	background-color: #faebd7;

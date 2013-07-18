@@ -35,6 +35,13 @@ class EventController < ApplicationController
   end
 
   def ReportEvent
+
+    event_id = params[:event_id];
+
+    puts "\n\n\n\nEvent id: #{event_id}"
+
+    puts "\n\n\n\nInside Report event\n\n\n\n"
+
   end
 
   def ViewReportedEvents

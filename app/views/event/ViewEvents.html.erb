@@ -39,9 +39,19 @@
 
 		</div>
 
-		<div id="event_description" class="eventDescription">
-			<%= e.description %>
-		</div>	
+		<div id="description_container" class="descriptionContainer">
+
+			<div id="event_description" class="eventDescription">
+				<%= e.description %>
+			</div>	
+
+			id = <%= e.id %>
+
+			<div id="report_abuse_tag" class="reportAbuseTag">
+				<%= link_to(image_tag("red-icon.png", :size => "20x20", :title => "Click to report abuse"), {:controller => "event", :action => "ReportEvent", :event_id => "id" })  %>				
+			</div>
+
+		</div>
 
 	</div> 
   
