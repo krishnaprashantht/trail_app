@@ -1,0 +1,49 @@
+<div id="feedback_heading" class="feedbackHeading">
+
+	<h3 class="textAlignCenter">Feedbacks</h3>
+
+</div>
+
+<div id="page_list_feedback" class="pageList">
+
+	<div id="paginate_list_feedback" class="paginateList">
+
+		<ul id="pagination-flickr">
+			<li><a href="?page=1">1</a></li>
+			<li><a href="?page=2">2</a></li>
+			<li><a href="?page=3">3</a></li>
+			<li><a href="?page=4">4</a></li>
+			<li><a href="?page=5">5</a></li>
+			<li><a href="?page=6">6</a></li>
+		</ul>	
+
+	</div>
+
+</div>
+
+<br>
+
+
+<% @feedbacks.each do |f| %>
+
+	<div id="feedback_container" class="feedbackContainer">
+
+		<div id="user_details" class="userDetails">
+
+			<div id="feedback_name" class="feedbackName">
+				<%= f.name %>
+			</div>
+
+			<div id="feedback_email" class="feedbackEmail">
+				<%= f.email %>
+			</div>
+
+		</div>
+
+		<div id="feedback_content" class="feedbackContent">
+			<%= f.feedback %>
+		</div>	
+
+	</div> 
+  
+<% end %>

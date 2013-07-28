@@ -31,6 +31,7 @@ class EventController < ApplicationController
 
     @events = Event.view_events(page_number)
 
+   
 
   end
 

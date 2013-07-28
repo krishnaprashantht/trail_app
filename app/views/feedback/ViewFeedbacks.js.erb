@@ -1,0 +1,6 @@
+jQuery(document).on("ajax:success", function() {
+	jQuery('#wrapper').fadeTo('slow',1);
+    jQuery('#spinner_page').hide();
+    jQuery("#content_layout").html( "<%= escape_javascript( render :partial => 'viewfeedbacks' ) %>" );
+});
+

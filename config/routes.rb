@@ -25,6 +25,8 @@ EventManagement::Application.routes.draw do
 
   match "event/ViewEvents" => "event#ViewEvents"
 
+  match "feedback/GiveFeedback" => "feedback#GiveFeedback"
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
