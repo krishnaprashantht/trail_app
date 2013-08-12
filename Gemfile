@@ -37,6 +37,12 @@ end
 
 gem "jquery-rails", "~> 3.0.2"
 
+#Paperclip gem for uploading images
+gem 'paperclip'
+
+#For user authentication via devose gem
+gem 'devise'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 

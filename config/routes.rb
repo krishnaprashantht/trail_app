@@ -1,5 +1,7 @@
 EventManagement::Application.routes.draw do
-  get "feedback/GiveFeedback"
+  devise_for :users
+
+  get "devise/feedback/GiveFeedback"
 
   get "feedback/ViewFeedbacks"
 
@@ -11,9 +13,9 @@ EventManagement::Application.routes.draw do
 
   get "event/UnmarkReportedEvents"
 
-  get "event/AddEvent"
+  get "devise/event/AddEvent"
 
-  get "event/ViewEvents"
+  get "devise/event/ViewEvents"
 
   get "event/DeleteEvent"
 
@@ -21,11 +23,13 @@ EventManagement::Application.routes.draw do
 
   get "home/index"
 
-  match "event/AddEvent" => "event#AddEvent"
+  devise_for :users, path_names: { sign_out: 'sign_out' }
 
-  match "event/ViewEvents" => "event#ViewEvents"
+  match "devise/event/AddEvent" => "event#AddEvent"
 
-  match "feedback/GiveFeedback" => "feedback#GiveFeedback"
+  match "devise/event/ViewEvents" => "event#ViewEvents"
+
+  match "devise/feedback/GiveFeedback" => "feedback#GiveFeedback"
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

@@ -6,8 +6,8 @@
 development:
   adapter: oracle_enhanced
   database: XE
-  username: event
-  password: event
+  username: manage
+  password: manage
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

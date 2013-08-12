@@ -42,121 +42,137 @@
 
 				</div>
 
-				<div id="content_menu" class="contentMenu">
+				<% if current_user %>
+
+					<div id="content_menu" class="contentMenu">
 			
-					<script>	
+						<script>	
 					
-						$(function() {
-							$( "#add_event_tab" ).draggable({ containment: "parent" });
-							$( "#view_events_tab" ).draggable({ containment: "parent" });
-							$( "#give_feedback_tab" ).draggable({ containment: "parent" });
-							$( "#view_feedbacks_tab" ).draggable({ containment: "parent" });
-						});
+							$(function() {
+								$( "#add_event_tab" ).draggable({ containment: "parent" });
+								$( "#view_events_tab" ).draggable({ containment: "parent" });
+								$( "#give_feedback_tab" ).draggable({ containment: "parent" });
+								$( "#view_feedbacks_tab" ).draggable({ containment: "parent" });
+							});
 
-					</script>
+						</script>
 
-					<div id="add_event_tab" class="AddEventTab navbar-inner">
-						<span id="add_event_tab_text" class="newsText h5">
-							<%= link_to "Add Event", "#addEvent", :role => "button", :data => {:toggle => "modal"}  %>
-						</span>
-					</div>
+						<div id="add_event_tab" class="AddEventTab navbar-inner">
+							<span id="add_event_tab_text" class="newsText h5">
+								<%= link_to "Add Event", "#addEvent", :role => "button", :data => {:toggle => "modal"}  %>
+							</span>
+						</div>
 						
-					<div id="view_events_tab" class="ViewEventsTab navbar-inner">
-						<span id="view_events_tab_text" class="newsText h5">
-							<%= link_to "View Events", "/event/ViewEventsOptions", :remote => true, :id => "vieo" %>
-						</span>
-					</div>
+						<div id="view_events_tab" class="ViewEventsTab navbar-inner">
+							<span id="view_events_tab_text" class="newsText h5">
+								<%= link_to "View Events", "/event/ViewEventsOptions", :remote => true, :id => "vieo" %>
+							</span>
+						</div>
 
-					<div id="view_reported_events_tab" class="ViewReportedEventsTab navbar-inner">
-						<span id="view_reported_events_tab_text" class="newsText h5">
-							<%= link_to "View Reported Events", "/events/ViewReportedEvents", :remote => true, :id => "spor" %>
-						</span>
-					</div>	
+						<div id="view_reported_events_tab" class="ViewReportedEventsTab navbar-inner">
+							<span id="view_reported_events_tab_text" class="newsText h5">
+								<%= link_to "View Reported Events", "/events/ViewReportedEvents", :remote => true, :id => "spor" %>
+							</span>
+						</div>	
 
-					<div id="give_feedback_tab" class="GiveFeedbackTab navbar-inner">
-						<span id="give_feedback_tab_text" class="newsText h5">
-							<%= link_to "Give Feedback", "#giveFeedback", :role => "button", :data => {:toggle => "modal"}  %>
-						</span>
-					</div>
+						<div id="give_feedback_tab" class="GiveFeedbackTab navbar-inner">
+							<span id="give_feedback_tab_text" class="newsText h5">
+								<%= link_to "Give Feedback", "#giveFeedback", :role => "button", :data => {:toggle => "modal"}  %>
+							</span>
+						</div>
 
-					<div id="view_feedbacks_tab" class="ViewFeedbacksTab navbar-inner">
-						<span id="view_feedbacks_tab_text" class="newsText h5">
-							<%= link_to "View Feedbacks", "/feedback/ViewFeedbacks", :remote => true, :id => "spor" %>
-						</span>
-					</div>	
+						<div id="view_feedbacks_tab" class="ViewFeedbacksTab navbar-inner">
+							<span id="view_feedbacks_tab_text" class="newsText h5">
+								<%= link_to "View Feedbacks", "/feedback/ViewFeedbacks", :remote => true, :id => "spor" %>
+							</span>
+						</div>	
 						
 							
-				</div>
+					</div>
 
-				<div id="image_job" class="imageJob">
+					<div id="image_job" class="imageJob">
 
-					<div id="image_slider" class="imageSlider">
-			
-						<ul id="slide-images">
+						<div id="image_slider" class="imageSlider">
+				
+							<ul id="slide-images">
 	
-							<li><%= image_tag "one.jpeg", :alt => "One", :title => "One" %></li>
-							<li><%= image_tag "two.jpeg", :alt => "Two", :title => "Two" %></li>
-							<li><%= image_tag "three.jpeg", :alt => "Three", :title => "Three" %></li>
-							<li><%= image_tag "four.jpeg", :alt => "Four", :title => "Four" %></li>
-							<li><%= image_tag "five.jpeg", :alt => "Four", :title => "Four" %></li>
-							<li><%= image_tag "six.jpeg", :alt => "Six", :title => "Six" %></li>
-							<li><%= image_tag "seven.jpeg", :alt => "Seven", :title => "Seven" %></li>
-							<li><%= image_tag "eight.jpeg", :alt => "Eight", :title => "Eight" %></li>
-							<li><%= image_tag "nine.jpeg", :alt => "Nine", :title => "Nine" %></li>
-							<li><%= image_tag "ten.jpeg", :alt => "Ten", :title => "Ten" %></li>
+								<li><%= image_tag "one.jpeg", :alt => "One", :title => "One" %></li>
+								<li><%= image_tag "two.jpeg", :alt => "Two", :title => "Two" %></li>
+								<li><%= image_tag "three.jpeg", :alt => "Three", :title => "Three" %></li>
+								<li><%= image_tag "four.jpeg", :alt => "Four", :title => "Four" %></li>
+								<li><%= image_tag "five.jpeg", :alt => "Four", :title => "Four" %></li>
+								<li><%= image_tag "six.jpeg", :alt => "Six", :title => "Six" %></li>
+								<li><%= image_tag "seven.jpeg", :alt => "Seven", :title => "Seven" %></li>
+								<li><%= image_tag "eight.jpeg", :alt => "Eight", :title => "Eight" %></li>
+								<li><%= image_tag "nine.jpeg", :alt => "Nine", :title => "Nine" %></li>
+								<li><%= image_tag "ten.jpeg", :alt => "Ten", :title => "Ten" %></li>
 	
-						</ul>
+							</ul>
 
-					</div>		
+						</div>		
 
-					<div id="job_add" class="jobAdd">
+						<div id="job_add" class="jobAdd">
 			
-						<h4>Want to advertize your business</h4>
+							<h4>Want to advertize your business</h4>
 
-						<br>
+							<br>
 
-						<h5>We are soon going commercial</h5>	
+							<h5>We are soon going commercial</h5>	
 
-						<br>
+							<br>
 
-						<h5>Drop your phone number to us.</h5>
+							<h5>Drop your phone number to us.</h5>
 
-						<br>
+							<br>
 
-						<h5>Mail us at marketing@xploreall.com</h5>
+							<h5>Mail us at marketing@xploreall.com</h5>
 
-					</div>		
+						</div>		
 
-				</div>
+					</div>
+
+				<% end %>
 
 
 				<div id="content_layout" class="contentLayout">
-			
+		
+					<% if flash[:alert] %>
+	       				<p class="flash-error"><%= flash[:alert] %></p>
+   					<% end %>
+          
+  					<% if flash[:notice] %>
+  						<p class="flash-notice"><%= flash[:notice] %></p>
+  					<% end %>
+
 					<%= yield %>
 			
 				</div>
 
-				<!-- Start of code for feedback/comment using Disqus -->
+				<% if current_user %>
 
-				<div id="disqus_thread">
+					<!-- Start of code for feedback/comment using Disqus -->
+
+					<div id="disqus_thread">
 			
-				</div>
+					</div>
     	
-    			<script type="text/javascript">
-        			/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
-	        		var disqus_shortname = 'eventmanagementap'; // required: replace example with your forum shortname
+    				<script type="text/javascript">
+        				/* * * CONFIGURATION VARIABLES: EDIT BEFORE PASTING INTO YOUR WEBPAGE * * */
+	        			var disqus_shortname = 'eventmanagementap'; // required: replace example with your forum shortname
 
-    	    		/* * * DON'T EDIT BELOW THIS LINE * * */
-        			(function() {
-            			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-            			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-            			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-        			})();
-    			</script>
-	    		<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
-    			<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+	    	    		/* * * DON'T EDIT BELOW THIS LINE * * */
+    	    			(function() {
+        	    			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+            				dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+            				(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+        				})();
+    				</script>
+	    			<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript> 
+	    			<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
     			
-    			<!-- End of code for feedback/comment using Disqus -->
+    				<!-- End of code for feedback/comment using Disqus -->
+
+    			<% end %>
 
 
 				<div id="addEvent" class="modal hide" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
